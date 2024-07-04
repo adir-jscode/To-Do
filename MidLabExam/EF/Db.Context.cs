@@ -13,10 +13,10 @@ namespace MidLabExam.EF
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class DbEntities1 : DbContext
+    public partial class DbEntities2 : DbContext
     {
-        public DbEntities1()
-            : base("name=DbEntities1")
+        public DbEntities2()
+            : base("name=DbEntities2")
         {
         }
     
@@ -26,8 +26,8 @@ namespace MidLabExam.EF
         }
     
         public virtual DbSet<AccessGroup> AccessGroups { get; set; }
-        public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<Category> Categories { get; set; }
         public virtual DbSet<Task> Tasks { get; set; }
+        public virtual DbSet<User> Users { get; set; }
     }
 }

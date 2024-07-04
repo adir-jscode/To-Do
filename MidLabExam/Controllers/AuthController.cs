@@ -11,7 +11,7 @@ namespace MidLabExam.Controllers
 {
     public class AuthController : Controller
     {
-        DbEntities1 db = new DbEntities1();
+        DbEntities2 db = new DbEntities2();
         UserMapper Usermapper = new UserMapper();
         // GET: Login
 

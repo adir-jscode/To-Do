@@ -18,8 +18,8 @@ namespace MidLabExam.Mapper
                 DueDate = entity.DueDate,
                 Status = entity.Status,
                 PriorityLevel = entity.PriorityLevel,
-                CreatedAt = entity.CreatedAt,
-                UpdatedAt = entity.UpdatedAt,
+                CreatedAt = (DateTime)entity.CreatedAt,
+                UpdatedAt = DateTime.Now,
                 CategoryId = entity.CategoryId,
                 Category = entity.Category != null ? new Category { Id = entity.CategoryId, Name = entity.Category.Name } : null
             };

@@ -1,4 +1,5 @@
-﻿using MidLabExam.DTOs;
+﻿using MidLabExam.Auth;
+using MidLabExam.DTOs;
 using MidLabExam.EF;
 using MidLabExam.Mapper;
 using System;
@@ -10,21 +11,20 @@ using System.Web.Mvc;
 
 namespace MidLabExam.Controllers
 {
+    [UserAccess]
     public class TaskController : Controller
     {
         // GET: Task
 
-        DbEntities1 db = new DbEntities1();
+        DbEntities2 db = new DbEntities2();
         TaskMapper taskMapper = new TaskMapper();
         [HttpGet]
         public ActionResult Index()
         {
             var tasks = db.Tasks.ToList();
             var mappedTasks = taskMapper.Map(tasks);
-            foreach (var task in tasks)
-            {
-                db.Entry(task).Reference(t => t.Category).Load();
-            }
+            // Load categories into ViewBag
+            ViewBag.Categories = new SelectList(db.Categories, "Id", "Name");
 
             return View(mappedTasks);
         }
@@ -43,6 +43,7 @@ namespace MidLabExam.Controllers
             if (ModelState.IsValid)
             {
                 var mappedTask = taskMapper.Map(task);
+                mappedTask.CreatedAt = DateTime.Now; 
                 
                 db.Tasks.Add(mappedTask);
                 db.SaveChanges();

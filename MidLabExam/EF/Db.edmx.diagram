@@ -4,13 +4,13 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="7717858659284af193b20378edd08404" Name="Diagram1">
-        <EntityTypeShape EntityType="DbModel.AccessGroup" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
+      <Diagram DiagramId="f888229f75194c6b93890a8e5b85b3de" Name="Diagram1">
+        <EntityTypeShape EntityType="DbModel.AccessGroup" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbModel.Category" Width="1.5" PointX="0.75" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbModel.Task" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
         <EntityTypeShape EntityType="DbModel.User" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
         <AssociationConnector Association="DbModel.FK_Users_AccessGroups" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="DbModel.Category" Width="1.5" PointX="0.75" PointY="5.5" />
-        <EntityTypeShape EntityType="DbModel.Task" Width="1.5" PointX="3" PointY="5" />
-        <AssociationConnector Association="DbModel.FK_Tasks_Categories" />
+        <AssociationConnector Association="DbModel.FK_Tasks_Categories" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
